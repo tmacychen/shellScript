@@ -6,14 +6,14 @@ script 和 scriptreplay
 
 查看当前目录中的内容
 
-```
+```shell
 find . -print
 ```
 
 -print是表示以'\n'为分隔文件的定界符
 -print0 表示以'\0'为分隔文件的定界符
 
-```
+```shell
 find /home/tmacy -name "*.txt" -print
 ```
 
@@ -23,7 +23,7 @@ find /home/tmacy -name "*.txt" -print
 
 如果想匹配多个条件中的一个，可以采用OR
 
-```
+```shell
 find . \(-name "*.txt" -o name "*.pdf" \) -print
 ```
 
@@ -41,17 +41,17 @@ find . \(-name "*.txt" -o name "*.pdf" \) -print
 
  -atime -mtime -ctime 访问时间，修改时间，创建时间
 
- ```
+ ```shell
  find . -type f -atime -7 -print
  ```
  打印最近七天内被访问过的所有文件
 
- ```
+ ```shell
  find . -type f -atime 7 -print
  ```
  打印恰好在七天前访问过的所有文件
 
- ```
+ ```shell
  find . -type f -atime +7 -print
  ```
  打印访问时间超过七天的所有文件
@@ -60,7 +60,7 @@ find . \(-name "*.txt" -o name "*.pdf" \) -print
 
  -newer 找出比参考文件更新的所文件
 
- ```
+ ```shell
  find . -type -f -newer file.txt -print
  ```
 
