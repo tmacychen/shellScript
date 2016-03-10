@@ -68,7 +68,7 @@ done
 `touch -d "Fri Jun 25 20:22:22 IST 1999" filename`
 -d 可以接受任意标准日期格式
 
-#列举文件类型统计信息
+# 列举文件类型统计信息
 
 file命令：打印文件类型信息
 
@@ -78,6 +78,39 @@ file命令：打印文件类型信息
 
 文件统计脚本：filestat.sh
 
-##
+## 显示当前路径下的目录
+
+1. `ls -d */`
+2. `ls -l | grep ^d `
+3. `find . -type d -maxdepth 1`
+
+## 统计文件
+
+统计行数
+`wc -l file`
+`cat file | wc -l`
+
+统计单词数
+`wc -w file`
+`cat file | wc -l`
+
+统计字符数
+`wc -c file`
+`cat file | wc -c`
+
+统计文件
+`wc file`
+显示行数，单词数，字符数
+
+打印最长行的长度
+`wc file -L`
+
+## 打印目录树
+
+`tree directory`
+
+以html形式输出
+
+`tree directory -H http://localhost -o out.html`
 
 
