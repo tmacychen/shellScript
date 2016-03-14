@@ -30,11 +30,11 @@
 
 `curl URL`
 
---silent 不显示进度信息
+--silent -s 不显示进度信息
 
 -O 将下载的数据写入文件
 
 --progress 显示进度条
-
+-C  断点续传
 
 
