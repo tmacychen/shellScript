@@ -33,4 +33,28 @@ tar output.tar file1 file2...
 --exclude pattern  根据通配符来排除部分文件
 `tar -cf archive.tar --exclude "*.txt"` 排除所有txt文件
 
+-z 选择gzip来压缩文件
+`tar -czvf archive.tar.gz file1 file2 ...`
+`tar -xavf archive.tar.gz -C directory`
+
+如果有成千上万的文件需要归档压缩，我们可以循环添加文件
+```shell
+FILE_LIST="file1 file2 file3 ...."
+for f in $FILE_LIST;
+do
+tar -rvf archive.tar $f
+done
+gzip archive.tar
+```
+zcat 可以直接从压缩文件中读取文件到stdout上
+
+gzip可以指定压缩率,1最低，9最高：`gzip -9 testfile`
+
+-j 选择bzip2来压缩文件
+`tar -cjvf archive.tar.bz2 file1 file2 ...`
+`tar -xjvf archive.tar.bz2`
+同样bzip2也会制定压缩率，从1-9
+`bzip2 -9 file`
+
+
 
